@@ -1,0 +1,58 @@
+
+
+
+.menu-header {
+  display: flex;
+  gap: 5px;
+  color: rgb(3, 3, 3);
+}
+
+.toggle-menu.active {
+  position: fixed;
+  height: 100%;
+  background-color: #333;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out
+}
+.menu-options {
+  padding: 15px 0;
+  color: #ccc;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  /* height: 100%; */
+}
+.menu-option {
+  margin-top: 5%;
+}
+
+.menu-option:hover {
+  color: #fff;
+  background-color: #444;
+}
+
+.menu-icon {
+  margin-right: 10%;
+  font-size: 20px;
+}
+.right-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.top-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bottom-menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
