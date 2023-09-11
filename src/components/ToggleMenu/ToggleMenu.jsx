@@ -58,7 +58,7 @@ function ToggleMenu() {
 
   return (
     
-    <div className={toggleMenuClass}>
+    <div  className={toggleMenuClass}>
       <div className="menu-header">
         {iconComponents[CONFIG.icon] && (
           <div
