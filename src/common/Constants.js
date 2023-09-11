@@ -6,7 +6,7 @@ export const CONFIG = {
       title: "Home",
       icon: "FaHome",
       record_type : "type1" ,
-      visibility: "disable",
+      visibility: "enable",
       action: [
         {
           type: "hover",
@@ -22,6 +22,22 @@ export const CONFIG = {
       visibility: "disable",
       
     },
+
+    {
+      title: "Logout",
+      icon: "FaSignOutAlt",
+      record_type : "heading",
+      visibility: "enable",
+      action: [
+        {
+          type: "click",
+          cb: function () {
+            console.log("Clicked on Home");
+          },
+        },
+      ],
+    },
+    
     {
       title: "Logout",
       icon: "FaSignOutAlt",
@@ -37,5 +53,5 @@ export const CONFIG = {
       ],
     },
   ],
-  type: "left",  
+  type: "top",  
 };

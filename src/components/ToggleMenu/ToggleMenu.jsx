@@ -57,6 +57,7 @@ function ToggleMenu() {
   };
 
   return (
+    
     <div className={toggleMenuClass}>
       <div className="menu-header">
         {iconComponents[CONFIG.icon] && (
@@ -71,6 +72,9 @@ function ToggleMenu() {
           {CONFIG.title}
         </span>
       </div>
+      <div
+        className={`drawer ${isMenuVisible ? 'open' : ''} ${CONFIG.type}`}
+      >
       {isMenuVisible && (
         <div className="menu-options">
           {enabledRecords.map((record, index) => (
@@ -93,11 +97,12 @@ function ToggleMenu() {
               isDisabled={record.visibility === "disable"}
               isSeparator={
                 record.record_type.trim() === "separator"
-              } // Check for "separator"
+              } 
             />
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 }

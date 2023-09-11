@@ -4,7 +4,7 @@ import './ToggleMenu.css';
 function MenuOption({ title, icon, onMouseEnter, onClick, isDisabled, isSeparator }) {
   if (isSeparator) {
   
-    return <div className="menu-separator">___________________________</div>;
+    return <div className="menu-separator" >___________________________</div>;
   }
 
   const optionStyle = isDisabled ? { color: 'red' } : {}; 

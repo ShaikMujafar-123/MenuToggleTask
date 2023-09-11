@@ -1,58 +1,98 @@
-
-
-
 .menu-header {
   display: flex;
   gap: 5px;
   color: rgb(3, 3, 3);
 }
 
-.toggle-menu.active {
-  position: fixed;
-  height: 100%;
-  background-color: #333;
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  transition: transform 0.3s ease-in-out
-}
-.menu-options {
-  padding: 15px 0;
-  color: #ccc;
-  margin-left: 5%;
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  /* height: 100%; */
-}
 .menu-option {
-  margin-top: 5%;
+  margin-top: 2%;
+  color: white;
+}
+.menu-separator {
+  color: white;
 }
 
+.menu-options {
+  padding-left: 10px;
+}
 .menu-option:hover {
-  color: #fff;
-  background-color: #444;
+  color: #303030;
+  background-color: #979797;
+  cursor: pointer;
 }
 
 .menu-icon {
-  margin-right: 10%;
+  margin-right: 3%;
   font-size: 20px;
 }
-.right-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 
-.top-menu {
-  position: absolute;
+.drawer {
+  position: fixed;
+  background-color: #444444;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
   top: 0;
   left: 0;
+  width: 250px;
+  height: 100%;
+
 }
 
-.bottom-menu {
-  position: absolute;
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer.top {
+  transform: translateY(-100%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+}
+
+.drawer.open.top {
+  transform: translateY(0%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+}
+
+.drawer.bottom {
+  transform: translateY(100%);
+  top: auto;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 250px;
+}
+
+.drawer.open.bottom {
+  transform: translateY(0%);
+  
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+}
+
+.drawer.right {
+  transform: translateX(100%);
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
+}
+
+.drawer.open.right {
+  transform: translateX(0);
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
 }
