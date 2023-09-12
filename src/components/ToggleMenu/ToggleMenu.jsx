@@ -56,53 +56,68 @@ function ToggleMenu() {
     }
   };
 
+  
   return (
-    
-    <div  className={toggleMenuClass}>
+    <div className={toggleMenuClass}>
       <div className="menu-header">
         {iconComponents[CONFIG.icon] && (
-          <div
-            style={{ margin: "8px", fontSize: "25px" }}
+          <div 
+            
             onClick={handleToggleMenu}
           >
             {iconComponents[CONFIG.icon]}
           </div>
         )}
-        <span style={{ marginTop: "9px", fontWeight: "bold" }}>
+        <span >
           {CONFIG.title}
         </span>
       </div>
-      <div
-        className={`drawer ${isMenuVisible ? 'open' : ''} ${CONFIG.type}`}
-      >
-      {isMenuVisible && (
-        <div className="menu-options">
-          {enabledRecords.map((record, index) => (
-            <MenuOption
-              key={index}
-              title={record.title}
-              icon={iconComponents[record.icon]}
-              onMouseEnter={() =>
-                handleAction(
-                  record.action.find((a) => a.type === "hover"),
-                  record.title
-                )
-              }
-              onClick={() =>
-                handleAction(
-                  record.action.find((a) => a.type === "click"),
-                  record.title
-                )
-              }
-              isDisabled={record.visibility === "disable"}
-              isSeparator={
-                record.record_type.trim() === "separator"
-              } 
-            />
-          ))}
-        </div>
-      )}
-    </div>
+
+      <div className={`drawer ${isMenuVisible ? "open" : ""} ${CONFIG.type}`}>
+      <div className="menu-header">
+        {iconComponents[CONFIG.icon] && (
+          <div 
+            
+            onClick={handleToggleMenu}
+          >
+            {iconComponents[CONFIG.icon]}
+          </div>
+        )}
+        <span >
+          {CONFIG.title}
+        </span>
+      </div>
+        {isMenuVisible && (
+          <div className="menu-options">
+            {enabledRecords.map((record, index) => (
+              <MenuOption
+                key={index}
+                title={record.title}
+                icon={iconComponents[record.icon]}
+                onMouseEnter={() => {
+                  const hoverAction =
+                    record.action &&
+                    record.action.find((a) => a.type === "hover");
+                  if (hoverAction) {
+                    handleAction(hoverAction, record.title);
+                  }
+                }}
+                onClick={() => {
+                  const clickAction =
+                    record.action &&
+                    record.action.find((a) => a.type === "click");
+                  if (clickAction) {
+                    handleAction(clickAction, record.title);
+                  }
+                }}
+                isDisabled={record.visibility === "disable"}
+                isSeparator={record.record_type.trim() === "separator"}
+                isHeader={record.header}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

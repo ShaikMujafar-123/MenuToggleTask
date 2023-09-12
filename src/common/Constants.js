@@ -5,7 +5,7 @@ export const CONFIG = {
     {
       title: "Home",
       icon: "FaHome",
-      record_type : "type1" ,
+      record_type : "title" ,
       visibility: "enable",
       action: [
         {
@@ -17,17 +17,35 @@ export const CONFIG = {
       ],
     },
     {
-      
+      title: "Contact us",
+      icon: "BiSupport",
+      record_type : "title" ,
+      visibility: "enable",
+      action: [
+        {
+          type: "hover",
+          cb: function () {
+            console.log("Clicked on Home");
+          },
+        },
+      ],
+    },
+    {
       record_type :  "separator " ,
       visibility: "disable",
-      
     },
+    {
+      record_type :  "heading " ,
+      header : "Auth",
+      visibility: "enable",
+    },
+    
 
     {
       title: "Logout",
       icon: "FaSignOutAlt",
-      record_type : "heading",
-      visibility: "enable",
+      record_type : "title",
+      visibility: "disable",
       action: [
         {
           type: "click",
@@ -38,20 +56,7 @@ export const CONFIG = {
       ],
     },
     
-    {
-      title: "Logout",
-      icon: "FaSignOutAlt",
-      record_type : "heading",
-      visibility: "enable",
-      action: [
-        {
-          type: "click",
-          cb: function () {
-            console.log("Clicked on Home");
-          },
-        },
-      ],
-    },
+   
   ],
-  type: "top",  
+  type: "left",  
 };

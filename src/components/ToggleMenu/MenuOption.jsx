@@ -1,13 +1,18 @@
 import React from 'react';
 import './ToggleMenu.css';
 
-function MenuOption({ title, icon, onMouseEnter, onClick, isDisabled, isSeparator }) {
-  if (isSeparator) {
+function MenuOption({ title, icon, onMouseEnter, onClick, isDisabled, isSeparator, isHeader }) {
+  console.log("object",isHeader)
   
-    return <div className="menu-separator" >___________________________</div>;
+  if (isSeparator) {
+    return <div className="menu-separator"></div>;
   }
 
-  const optionStyle = isDisabled ? { color: 'red' } : {}; 
+  const optionStyle = isDisabled
+  ? { opacity: 0.5, color: '#999', pointerEvents: 'none' }
+  : {};
+
+  
 
   const handleMouseEnter = () => {
     if (!isDisabled && onMouseEnter) {
@@ -28,9 +33,12 @@ function MenuOption({ title, icon, onMouseEnter, onClick, isDisabled, isSeparato
       onClick={handleClick}
       style={optionStyle}
     >
+      
       {icon && <span className="menu-icon">{icon}</span>}
       {title}
+      {isHeader ? isHeader : ""}
     </div>
+    
   );
 }
 
