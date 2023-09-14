@@ -60,6 +60,7 @@ export const CONFIG = {
     
     
     
+    
    
   ],
   type: "left",  
