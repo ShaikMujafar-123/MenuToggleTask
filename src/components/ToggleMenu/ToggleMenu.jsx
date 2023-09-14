@@ -40,7 +40,7 @@ function ToggleMenu() {
 
   const handleAction = (action, title) => {
     if (action) {
-      // Handle the action based on its type like hover and clicked
+      //  Handle the action based on its type like hover and clicked
       switch (action.type) {
         case "hover":
           console.log(`Hovered over ${title}`);
@@ -58,7 +58,10 @@ function ToggleMenu() {
 
   
   return (
+   
+    
     <div className={toggleMenuClass}>
+      
       <div className="menu-header">
         {iconComponents[CONFIG.icon] && (
           <div 
@@ -72,8 +75,10 @@ function ToggleMenu() {
           {CONFIG.title}
         </span>
       </div>
-
+      
+     
       <div className={`drawer ${isMenuVisible ? "open" : ""} ${CONFIG.type}`}>
+      
       <div className="menu-header">
         {iconComponents[CONFIG.icon] && (
           <div 
@@ -117,8 +122,13 @@ function ToggleMenu() {
             ))}
           </div>
         )}
+        
+        </div>
+        
+      
       </div>
-    </div>
+      
+      
   );
 }
 

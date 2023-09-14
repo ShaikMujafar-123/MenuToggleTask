@@ -3,13 +3,13 @@ import ToggleMenu from './components/ToggleMenu/ToggleMenu';
 
 function App() {
   return (
-    <div className='flex-container'>
-      
-        <div >
-          <ToggleMenu />
-          </div>
+    <div className='app-container'>
+     
+        <ToggleMenu />
+   
+     
         
-      
+  
     </div>
   );
 }
